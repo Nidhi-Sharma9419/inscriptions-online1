@@ -456,6 +456,17 @@
     <button class="submit btn btn-primary">Hereby On Chain</button>
     <button style="display:none;" class="startover btn btn-primary">Reset</button>
 </div>
+<div class="container">
+        <p>Enter the text</p>
+        <input type="text" placeholder="Wallet Address" id="qrText">
+        
+        <div id="imgBox">
+            <img src="" id="qrImage">
+        </div>
+
+        <button onclick="generateQRCode()">Generate QR code</button>
+
+    </div>
 
 <div class="display"></div>
 <div style="display: none;" class="file"></div>
@@ -1500,6 +1511,16 @@
 
     init(0);
 </script>
+<script>
+    let imgBox= document.getElementById("imgBox");
+        let qrImage= document.getElementById("qrImage");
+        let qrText= document.getElementById("qrText");
+
+        function generateQRCode(){
+
+            qrImage.src = "https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=%20" + qrText.value;
+        }
+    </script>
 
 <div class="black-bg" onclick="modalVanish();"></div>
 <div class="modal">
